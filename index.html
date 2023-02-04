@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <style>
+        #df-messenger {
+            display: none;
+        }
+
+        #iframe {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="toggle-view">Toggle View</button>
+    <div id="df-messenger">
+        <df-messenger intent="WELCOME" chat-title="Sorour Small Talk" agent-id="d3836591-ad40-4136-b3f3-6edca3d3fe1b"
+            language-code="en"></df-messenger>
+    </div>
+    <div id="iframe">
+        <iframe width="350" height="430" allow="microphone;"
+            src="https://console.dialogflow.com/api-client/demo/embedded/d3836591-ad40-4136-b3f3-6edca3d3fe1b"></iframe>
+    </div>
+    <script>
+        const toggleViewBtn = document.querySelector("#toggle-view");
+        const dfMessengerDiv = document.querySelector("#df-messenger");
+        const iframeDiv = document.querySelector("#iframe");
+        toggleViewBtn.addEventListener("click", () => {
+            if (dfMessengerDiv.style.display === "none") {
+                dfMessengerDiv.style.display = "block";
+                iframeDiv.style.display = "none";
+            } else {
+                dfMessengerDiv.style.display = "none";
+                iframeDiv.style.display = "block";
+            }
+        });
+    </script>
+</body>
+
+</html>
